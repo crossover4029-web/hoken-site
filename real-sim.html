@@ -40,6 +40,7 @@
     <span class="hero-eyebrow">独身またはお子様のいない方向け リアルシミュレーター</span>
     <h1>その保険料、<em>本当に</em>必要ですか？</h1>
     <p class="hero-lead-serif">実際に病気・事故が起きたとき、財布から出るお金を確認しよう。</p>
+    <p class="hero-disclaimer">※本ページは一般的な情報提供を目的とした試算ページです。保険商品や投資成果を保証・推奨するものではありません。実際の保険料・給付内容・自己負担額は、年齢・健康状態・加入条件・制度改定・病院・治療内容により異なります。</p>
     <p class="hero-lead">
       「万が一のために」と入った保険。でも実際いくら必要なのか、考えたことはありますか？<br>
       6つのリアルなケースで「保険あり」vs「NISAで備える」を比べてみましょう。
@@ -64,13 +65,14 @@
         <input type="range" id="sim-age" min="20" max="50" step="1" value="30" oninput="updateInputs()" aria-label="現在の年齢（20歳〜50歳）">
         <span class="slider-val" id="sim-age-val">30歳</span>
       </div>
+      <p class="input-privacy-note">🔒 入力内容はブラウザ内で計算するだけで、送信・保存はしていません。</p>
       <!-- 保険 vs NISA 対比ブロック -->
       <div class="compare-notes-grid">
         <div class="compare-note compare-note-ins">
           📌 20歳から現在の年齢まで、同額の保険料を払い続けた場合の累計試算です。
         </div>
         <div class="compare-note compare-note-nisa">
-          📌 同額を毎月NISA（年利4%複利）で積み立てた場合の概算試算です。
+          📌 同額を毎月つみたて投資した場合の一例として、年率4%で複利運用した想定の概算試算です。実際の運用成果は市場環境により変動し、元本割れする場合もあります。
         </div>
       </div>
       <div class="compare-cards-grid">
@@ -248,7 +250,7 @@
     <div class="cards-grid" id="cards-grid"></div>
 
     <div class="conclusion-box conclusion-box-lg" id="conclusion">—</div>
-    <p class="note-text">※ 掲載している医療費・給付金は一般的な目安です。実際の金額は病院・保険内容により異なります。</p>
+    <p class="note-text">※ケース比較は、一般的な治療・入院・公的医療保険適用を前提にした概算イメージです。高額療養費制度の適用有無・年齢区分・所得区分・差額ベッド代・先進医療・通院期間・保険契約内容によって、実際の負担額・給付額は大きく異なります。</p>
   </div>
 </section>
 
@@ -283,7 +285,7 @@
             </div>
             <div class="myplan-fee-badge">
               <div>
-                <div class="myplan-fee-badge-label">61歳男性・月額の目安</div>
+                <div class="myplan-fee-badge-label">61歳男性・参考イメージ</div>
                 <div class="myplan-fee-badge-amount">約 5,500円／月</div>
               </div>
               <div class="myplan-fee-badge-note">※終身保険<br>（保険料固定タイプ）</div>
@@ -299,7 +301,7 @@
             <div class="myplan-desc">NISAが十分積み上がっていれば一時金50万円だけで十分。診断された瞬間にお金が入る、気持ちの安心として持つ保険です。</div>
             <div class="myplan-fee-badge">
               <div>
-                <div class="myplan-fee-badge-label">61歳男性・月額の目安</div>
+                <div class="myplan-fee-badge-label">61歳男性・参考イメージ</div>
                 <div class="myplan-fee-badge-amount">約 7,500円／月</div>
               </div>
               <div class="myplan-fee-badge-note">※終身型・一時金特化<br>（がん単体保険は不要）</div>
@@ -322,7 +324,7 @@
             <div class="myplan-total-sum-val">約 13,000円／月</div>
           </div>
         </div>
-        <div class="myplan-note">※上記は61歳男性の一般的な目安です。健康状態・商品・喫煙状況等により異なります。必ず各保険会社でご確認ください。</div>
+        <div class="myplan-note">※2026年時点での一般的な保険料をもとにした参考水準です。実際の保険料は、保険会社・商品設計・払込期間・解約返戻金の有無・健康状態・喫煙歴等により異なります。必ず複数社でご確認ください。</div>
 
         <!-- 三大疾病の定義 -->
         <div class="sandai-def">
@@ -376,9 +378,30 @@
       </div>
     </div>
 
+    <div class="fit-grid">
+      <div class="fit-card fit-card-yes">
+        <div class="fit-card-title">✅ この考え方が向いている人</div>
+        <ul class="fit-list">
+          <li>独身、または扶養負担が小さい</li>
+          <li>すでに貯蓄やNISAを継続している</li>
+          <li>毎月の固定費を見直したい</li>
+          <li>保険に頼りすぎず、自分で資産管理したい</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-card-no">
+        <div class="fit-card-title">⚠️ この考え方だけでは足りない人</div>
+        <ul class="fit-list">
+          <li>小さなお子様がいる</li>
+          <li>住宅ローンや教育費の負担が大きい</li>
+          <li>貯蓄がまだ少なく、急な支出に弱い</li>
+          <li>休職・就業不能時の収入減が大きい</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="cta-buttons">
-      <a href="simulator.html" class="btn-cta-primary">📊 節約額をシミュレーションする</a>
-      <a href="review-guide.html" class="btn-cta-ghost">📋 保険の見直し手順を見る</a>
+      <a href="simulator.html" class="btn-cta-primary">📊 自分はいくら見直せるか確認する</a>
+      <a href="review-guide.html" class="btn-cta-ghost">📋 ムダ保険を見抜く手順を見る</a>
     </div>
   </div>
 </section>
@@ -387,6 +410,8 @@
   <div class="footer-logo">保険見直し<span>ナビ</span></div>
   <p class="footer-copy">CrossOver — 真-SHIN- の資産見直し実録シリーズ</p>
   <p><a href="index.html">トップ</a> ｜ <a href="simulator.html">シミュレーター</a> ｜ <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank" rel="noopener noreferrer">NISAサイト</a></p>
+  <p class="footer-disclaimer">本ページは一般的な情報提供を目的として作成しています。個別の保険募集・保険勧誘・投資助言を目的とするものではありません。数値・制度・保険料例は作成時点の情報に基づく参考値です。最終的な加入判断・投資判断は、各社の契約概要・約款・最新制度をご確認のうえご自身でご判断ください。</p>
+  <p class="footer-updated">最終更新：2026年4月</p>
 </footer>
 
 <script src="js/script.js"></script>

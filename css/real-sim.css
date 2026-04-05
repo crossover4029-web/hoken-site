@@ -344,6 +344,34 @@
 .hero-lead-serif { font-family:var(--serif); font-size:16px; color:var(--ink-mid); margin:0 0 16px; }
 .sandai-def-list { display:inline-block; margin-top:4px; }
 
+/* ヒーロー免責文 */
+.hero-disclaimer {
+  font-size:13px; color:rgba(255,255,255,.75);
+  background:rgba(0,0,0,.18); border-radius:6px;
+  padding:10px 14px; line-height:1.8;
+  margin:0 0 16px; border-left:3px solid rgba(255,255,255,.4);
+}
+
+/* 入力データ非送信の明記 */
+.input-privacy-note {
+  font-size:13px; color:var(--ink-light);
+  margin:10px 0 0; padding:6px 12px;
+  background:#F0F7F4; border-radius:6px;
+  border-left:3px solid var(--teal-border);
+}
+
+/* フッター免責文・更新日 */
+.footer-disclaimer {
+  font-size:12px; color:rgba(255,255,255,.55);
+  line-height:1.9; margin-top:16px;
+  border-top:1px solid rgba(255,255,255,.15);
+  padding-top:12px; max-width:640px; margin-left:auto; margin-right:auto;
+}
+.footer-updated {
+  font-size:12px; color:rgba(255,255,255,.4);
+  margin-top:6px;
+}
+
 /* ── ケース名タイトルバー ── */
 .case-title-bar {
   text-align:center;
@@ -373,8 +401,37 @@
 .flow-card-delay-2 { transition-delay:.2s; }
 .flow-card-delay-3 { transition-delay:.3s; }
 
+/* ── 向いている人 / 向いていない人 ── */
+.fit-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  margin-bottom:28px;
+}
+.fit-card {
+  border-radius:14px; padding:20px 22px;
+}
+.fit-card-yes {
+  background:#EAF5F1; border:1.5px solid #A8D9CC;
+}
+.fit-card-no {
+  background:#FDF0E8; border:1.5px solid var(--accent-light);
+}
+.fit-card-title {
+  font-size:15px; font-weight:700; margin-bottom:12px; line-height:1.5;
+}
+.fit-card-yes  .fit-card-title { color:#085041; }
+.fit-card-no   .fit-card-title { color:var(--accent); }
+.fit-list {
+  margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:8px;
+}
+.fit-list li {
+  font-size:14px; color:var(--ink-mid); line-height:1.7;
+}
 /* ── タブ：フォーカスアウトライン（キーボード操作） ── */
 .case-tab:focus-visible {
   outline:3px solid var(--accent);
   outline-offset:2px;
+}
+
+@media(max-width:600px) {
+  .fit-grid { grid-template-columns:1fr; }
 }
