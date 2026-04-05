@@ -170,6 +170,7 @@
 .myplan-title { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
 .myplan-title-sub { font-size:12px; font-weight:400; color:var(--ink-light); margin-left:8px; }
 .myplan-desc { font-size:15px; color:var(--ink-mid); line-height:1.8; }
+.myplan-desc-reader { font-size:14px; color:var(--teal); font-style:italic; }
 
 /* 警告ボックス */
 .myplan-alert { background:#FDF0E8; border-left:3px solid var(--accent); border-radius:4px; padding:10px 14px; margin-top:10px; font-size:14px; color:var(--ink-mid); line-height:1.85; }
