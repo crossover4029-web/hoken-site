@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>運営者紹介｜保険見直しナビ</title>
+  <meta name="description" content="FXで数百万円の損失を経験した61歳IT企業PMが、保険・NISA・iDeCoをゼロから見直した実録。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .timeline { list-style: none; position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px;
+      width: 1px; background: var(--border);
+    }
+    .timeline li {
+      position: relative; padding: 0 0 24px 20px; font-size: 14px; color: var(--ink-mid); line-height: 1.8;
+    }
+    .timeline li::before {
+      content: ''; position: absolute; left: -5px; top: 7px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--warm-white);
+    }
+    .timeline li strong { color: var(--ink); font-weight: 700; display: block; font-size: 15px; margin-bottom: 2px; }
+    .timeline li.now::before { background: var(--teal); }
+    .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 28px; }
+    .stat-card { background: var(--cream); border-radius: 8px; padding: 16px; text-align: center; }
+    .stat-val { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: 12px; color: var(--ink-light); margin-top: 4px; line-height: 1.5; }
+    .mission-box {
+      background: var(--accent-bg); border: 1px solid var(--accent-light);
+      border-radius: 8px; padding: 24px 28px; margin-bottom: 28px;
+      font-family: var(--serif); font-size: 16px; line-height: 2; color: var(--ink);
+    }
+    .mission-box strong { color: var(--accent); }
+    .site-list { list-style: none; display: grid; gap: 10px; }
+    .site-list li {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 18px; font-size: 14px;
+    }
+    .site-badge {
+      font-size: 10px; font-weight: 700; padding: 2px 8px;
+      border-radius: 3px; white-space: nowrap;
+    }
+    .badge-done   { background: var(--teal-bg);   color: var(--teal); }
+    .badge-next   { background: var(--accent-bg);  color: var(--accent); }
+    .badge-future { background: var(--cream); border: 1px solid var(--border); color: var(--ink-light); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">保険見直し<span>ナビ</span></a>
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="index.html#checklist">払いすぎチェック</a>
+      <a href="simulator.html">シミュレーター</a>
+      <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank">NISAサイト</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:48px 24px 40px;">
+  <div class="hero-inner fade-in">
+    <span class="hero-eyebrow">ABOUT</span>
+    <h1>失敗したから、<em>わかること</em>がある。</h1>
+    <p class="hero-lead">
+      FXで数百万円を失った61歳が、保険・NISA・iDeCo・年金をゼロから見直した実録です。<br>
+      専門家の綺麗な言葉ではなく、同世代のリアルな経験をお届けします。
+    </p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--warm-white);border-top:1px solid var(--border);">
+  <div class="section-inner fade-in">
+    <div class="section-label">プロフィール</div>
+    <h2 class="section-title">真-SHIN-（CrossOver）とは</h2>
+    <div class="about-card" style="margin-bottom:32px;">
+      <div class="about-avatar">真</div>
+      <div class="about-body">
+        <h3>真-SHIN-（CrossOver）</h3>
+        <p>
+          61歳・IT企業プロジェクトマネージャー・大阪在住。<br>
+          40代にFXで数百万円の損失を経験。50代後半から資産形成を一から見直し、
+          保険・NISA・iDeCoを実践中。<br>
+          「CrossOver」はFX失敗という挫折を乗り越え（cross over）、
+          新しいステージへ踏み出すという意味を込めたペンネームです。
+        </p>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-val">61歳</div>
+        <div class="stat-label">IT企業PM<br>大阪在住</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">数百万</div>
+        <div class="stat-label">FXでの損失額<br>（40代）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">144万</div>
+        <div class="stat-label">保険見直しで<br>生まれた10年の差額</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner fade-in">
+    <div class="section-label">経緯</div>
+    <h2 class="section-title">FX失敗から、資産見直しへ</h2>
+    <div class="balloon type-worry">
+      <img src="img/chara-worry.png" alt="真-SHIN-" class="balloon-chara">
+      <div class="balloon-body">
+        <div class="balloon-label">あの頃の後悔</div>
+        <div class="balloon-text">「損切りできずにずるずると…気づいたら<strong>数百万円のマイナス</strong>でした。<br>
+        投機と資産形成の違いを、痛い思いをして初めて理解しました。」</div>
+      </div>
+    </div>
+    <ul class="timeline">
+      <li>
+        <strong>40代前半 — FXを始める</strong>
+        「会社の給料だけでは老後が不安」という焦りからFXを開始。
+        最初は小さな利益が出たが、しだいに損失が拡大。
+      </li>
+      <li>
+        <strong>40代後半 — 数百万円の損失確定</strong>
+        損切りを繰り返し、気づけば数百万円のマイナス。
+        「投機」ではなく「資産形成」の大切さを痛感した時期。
+      </li>
+      <li>
+        <strong>50代前半 — 保険の見直しを決意</strong>
+        毎月2万3千円の保険料を漫然と払い続けていることに気づく。
+        証券を引っ張り出して中身を確認したところ、不要な特約が山積みだった。
+      </li>
+      <li>
+        <strong>50代後半 — FP相談・保険を再設計</strong>
+        無料FP相談を活用し、生命保険・医療保険・がん保険を整理。
+        月2万3千円→1万1千円に削減。浮いた月1万2千円をNISAへ。
+      </li>
+      <li class="now">
+        <strong>61歳・現在 — サイト運営開始</strong>
+        「同じ失敗を繰り返してほしくない」という思いで CrossOver を立ち上げ。
+        保険・NISA・iDeCo・年金の4サイトを順次公開中。
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="background:var(--warm-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner fade-in">
+    <div class="section-label">このサイトのミッション</div>
+    <h2 class="section-title">なぜ、このサイトを作ったか</h2>
+    <div class="mission-box">
+      「FXで失敗した」と言える人間が書くからこそ、<strong>リアルな話</strong>ができる。<br>
+      専門家でも、FPでもない。ただの61歳が、<strong>ゼロから学び直した記録</strong>をそのまま公開する。<br>
+      同世代の方が「自分もできる」と思えるサイトを目指しています。
+    </div>
+    <div class="balloon type-smile">
+      <img src="img/chara-smile.png" alt="真-SHIN-" class="balloon-chara">
+      <div class="balloon-body">
+        <div class="balloon-label">このサイトへの思い</div>
+        <div class="balloon-text">「失敗した私が書くからこそ、<strong>リアルな話</strong>ができると思っています。<br>
+        同世代の方に『自分もできる』と感じてもらえるサイトを目指しています。」</div>
+      </div>
+    </div>
+    <div class="section-label">CrossOver 4サイト構成</div>
+    <ul class="site-list">
+      <li>
+        <span class="site-badge badge-next">制作中</span>
+        <div>
+          <strong style="font-size:14px;">① 保険見直しナビ</strong>
+          <div style="font-size:12px;color:var(--ink-light);">節約・節税の入口。このサイトです。</div>
+        </div>
+      </li>
+      <li>
+        <span class="site-badge badge-future">予定</span>
+        <div>
+          <strong style="font-size:14px;">② iDeCoナビ</strong>
+          <div style="font-size:12px;color:var(--ink-light);">節税しながら増やす。</div>
+        </div>
+      </li>
+      <li>
+        <span class="site-badge badge-done">公開中</span>
+        <div>
+          <strong style="font-size:14px;">③ 新NISA「ほっとけ投資」</strong>
+          <div style="font-size:12px;color:var(--ink-light);">非課税で増やす。</div>
+        </div>
+        <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank" class="about-link" style="margin-left:auto;white-space:nowrap;">見る →</a>
+      </li>
+      <li>
+        <span class="site-badge badge-future">予定</span>
+        <div>
+          <strong style="font-size:14px;">④ 年金・老後戦略ナビ</strong>
+          <div style="font-size:12px;color:var(--ink-light);">増やしたものを賢く使う。</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section cta-final">
+  <div class="section-inner fade-in">
+    <div class="section-label">まず何から始めるか</div>
+    <h2 class="section-title">あなたの保険、一緒に確認しましょう</h2>
+    <p style="font-size:14px;color:var(--ink-mid);margin-bottom:28px;">チェックリストで「払いすぎのサイン」を確認するところから始めてください。</p>
+    <div class="cta-button-group">
+      <a href="index.html#checklist" class="btn-primary">払いすぎチェックをする</a>
+      <a href="simulator.html" class="btn-ghost">シミュレーターを使う</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">保険見直し<span>ナビ</span></div>
+  <p style="margin-bottom:8px;">CrossOver — 真-SHIN- の資産見直し実録シリーズ</p>
+  <p>
+    <a href="index.html">トップ</a> ｜
+    <a href="simulator.html">シミュレーター</a> ｜
+    <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank">NISAサイト</a>
+  </p>
+  <p style="margin-top:16px;font-size:11px;">※ 当サイトはアフィリエイト広告を含みます。掲載情報は個人の体験・調査に基づくものです。</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
