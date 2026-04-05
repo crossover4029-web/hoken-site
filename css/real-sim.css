@@ -1,0 +1,380 @@
+/* =============================================
+   保険見直しナビ — real-sim.css
+   real-sim.html 専用スタイル
+   CrossOver / 真-SHIN-
+   ============================================= */
+
+/* ── タブ ── */
+.tab-scroll { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:24px; }
+.case-tab {
+  display:flex; flex-direction:column; align-items:center;
+  border:2px solid var(--border); border-radius:12px;
+  padding:14px 10px; cursor:pointer;
+  background:#fff; transition:all .2s;
+  word-break:keep-all; overflow-wrap:anywhere;
+}
+.case-tab:hover  { border-color:var(--accent); background:var(--accent-bg); }
+.case-tab.active { border-color:var(--accent); background:var(--accent-bg); box-shadow:0 2px 8px rgba(192,75,26,.15); }
+.case-tab .tab-icon { font-size:28px; margin-bottom:6px; }
+.case-tab .tab-name { font-size:20px; font-weight:700; color:var(--ink); }
+.case-tab .tab-sub  { font-size:16px; color:var(--ink-light); margin-top:2px; }
+
+/* ── フローカード（統合ボックス） ── */
+.cards-grid {
+  background:#fff; border:2px solid var(--ink);
+  border-radius:14px; overflow:hidden;
+  margin-bottom:24px;
+  opacity:0; transform:translateY(10px); transition:opacity .4s ease, transform .4s ease;
+}
+.cards-grid.show { opacity:1; transform:translateY(0); }
+.flow-card { border-bottom:2px solid var(--border); }
+.flow-card:last-child { border-bottom:none; }
+.flow-card-header {
+  display:flex; align-items:center; justify-content:flex-start; gap:14px;
+  padding:16px 20px;
+}
+.flow-card-header.red   { background:#FAECE7; border-bottom:1px solid #E8C4B0; }
+.flow-card-header.blue  { background:#EEF4FF; border-bottom:1px solid #B8CFF5; }
+.flow-card-header.green { background:var(--teal-bg); border-bottom:1px solid var(--teal-border); }
+.fci {
+  width:72px; height:72px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:36px; flex-shrink:0; background:rgba(255,255,255,.7);
+}
+.fcl { font-size:16px; font-weight:700; letter-spacing:.06em; }
+.fcl.red   { color:var(--accent); }
+.fcl.blue  { color:#2C5FAA; }
+.fcl.green { color:var(--teal); }
+.fct { font-size:22px; font-weight:700; color:var(--ink); margin-top:2px; }
+.flow-card-body { padding:16px 20px; background:#fff; text-align:center; }
+.fca { font-family:var(--serif); font-size:clamp(30px,5vw,40px); font-weight:700; margin-bottom:8px; display:block; }
+.fca.red   { color:var(--accent); }
+.fca.blue  { color:#2C5FAA; }
+.fca.green { color:var(--teal); }
+.fcd { font-size:16px; color:var(--ink-mid); line-height:1.85; }
+
+/* ── vs カード ── */
+.versus-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.versus-card {
+  border-radius:12px; padding:18px 20px;
+  opacity:0; transform:translateY(10px); transition:opacity .4s ease, transform .4s ease;
+}
+.versus-card.show { opacity:1; transform:translateY(0); }
+.versus-card.ins  { background:#FDF0E8; border:1.5px solid var(--accent-light); }
+.versus-card.nisa { background:#D4EDE8; border:1.5px solid var(--teal-border); }
+.versus-label { font-size:12px; font-weight:700; margin-bottom:8px; letter-spacing:.04em; }
+.versus-label.ins  { color:var(--accent); }
+.versus-label.nisa { color:var(--teal); }
+.versus-body { font-size:14px; color:var(--ink-mid); line-height:1.9; }
+.versus-body strong { color:var(--ink); }
+
+/* ── 結論 ── */
+.conclusion-box {
+  background:#2A3828; border-radius:12px; padding:20px 24px;
+  font-size:15px; color:#fff; line-height:1.9; margin-bottom:10px;
+  opacity:0; transform:translateY(10px); transition:opacity .4s ease, transform .4s ease;
+}
+.conclusion-box.show { opacity:1; transform:translateY(0); }
+.conclusion-box strong { color:#9FE1CB; }
+.vbadge {
+  display:inline-block; font-size:12px; font-weight:700;
+  padding:4px 12px; border-radius:5px; margin-bottom:10px; letter-spacing:.06em;
+}
+.vb-ins  { background:#C04B1A; color:#fff; }
+.vb-nisa { background:#1D9E75; color:#fff; }
+.vb-both { background:#B07A20; color:#fff; }
+
+/* ── スライダーカード ── */
+.slider-card {
+  background:linear-gradient(135deg, #FDF0E8 0%, #FAF7F2 100%);
+  border:1px solid var(--accent-light); border-radius:14px;
+  padding:22px 24px; margin-bottom:24px;
+}
+.slider-card-title { font-size:clamp(15px,2vw,17px); font-weight:700; color:var(--ink); margin-bottom:12px; }
+.paid-summary { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+.paid-item { background:#fff; border-radius:10px; padding:16px 18px; border:1px solid var(--accent-light); }
+.paid-item-label { font-size:clamp(13px,1.8vw,15px); color:var(--ink-light); margin-bottom:6px; }
+.paid-item-val { font-size:clamp(24px,4vw,32px); font-weight:700; color:var(--accent); font-family:var(--serif); }
+
+/* ── 比較バー ── */
+.comp-bar {
+  background:#FAF7F2; border:1px solid var(--border);
+  border-radius:14px; padding:20px 20px; margin-bottom:20px;
+}
+.comp-grid { display:grid; grid-template-columns:1fr 60px 1fr; gap:12px; align-items:center; }
+.comp-card {
+  border-radius:14px; padding:22px 20px; text-align:center;
+  border:2px solid transparent; transition:all .3s; min-height:130px;
+  background:#fff;
+}
+.comp-card.nisa { border-color:var(--teal); }
+.comp-card.ins  { border-color:var(--accent); }
+.comp-card-head { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px; }
+.comp-hanamaru {
+  display:none; font-size:28px; font-weight:700; letter-spacing:.02em;
+  padding:15px 24px; border-radius:20px; line-height:1.4; text-align:center;
+  margin-bottom:6px;
+}
+.comp-hanamaru.nisa-win { background:#1D9E75; color:#fff; border:2px solid #0F6E56; }
+.comp-hanamaru.ins-win  { background:#C04B1A; color:#fff; border:2px solid #993C1D; }
+.comp-hanamaru-flower { font-size:60px; display:block; margin-bottom:2px; }
+.comp-card-name { font-size:16px; font-weight:700; letter-spacing:.04em; }
+.comp-card.nisa .comp-card-name { color:var(--teal); }
+.comp-card.ins  .comp-card-name { color:var(--accent); }
+.comp-card-amount {
+  font-family:var(--serif); font-size:clamp(24px,4vw,32px); font-weight:700;
+  margin-bottom:6px; line-height:1.3;
+}
+.comp-card.nisa .comp-card-amount { color:var(--teal); }
+.comp-card.ins  .comp-card-amount { color:var(--accent); }
+.comp-card-label { font-size:15px; color:var(--ink-mid); }
+.comp-vs { text-align:center; font-size:22px; font-weight:700; color:var(--ink-light); }
+
+/* ── レスポンシブ ── */
+@media(max-width:600px) {
+  .tab-scroll { grid-template-columns:repeat(3,1fr); gap:6px; }
+  .case-tab { padding:10px 6px; }
+  .case-tab .tab-icon { font-size:22px; margin-bottom:4px; }
+  .case-tab .tab-name { font-size:14px; }
+  .case-tab .tab-sub  { font-size:11px; }
+  .versus-grid  { grid-template-columns:1fr; }
+  .paid-summary { grid-template-columns:1fr; }
+  .comp-grid    { grid-template-columns:1fr; }
+  .comp-vs      { display:none; }
+}
+
+/* =============================================
+   インラインstyle → クラス化
+   ============================================= */
+
+/* 結論ボックス */
+.conclusion-box-lg { font-size:18px; }
+
+/* 注釈テキスト */
+.note-text { font-size:14px; color:var(--ink-light); margin-top:8px; }
+
+/* セクション：真SHINのコメント背景 */
+.section-cream { background:var(--cream); }
+
+/* 私の考えカード */
+.myplan-card { background:#fff; border:2px solid #2A3828; border-radius:16px; overflow:hidden; margin-top:24px; margin-bottom:4px; }
+.myplan-card-header { background:#2A3828; padding:14px 24px; }
+.myplan-card-header-sub { font-size:13px; color:#9FE1CB; font-weight:700; letter-spacing:.08em; margin-bottom:2px; }
+.myplan-card-header-title { font-size:18px; font-weight:700; color:#fff; }
+.myplan-card-body { padding:20px 24px; display:flex; flex-direction:column; gap:16px; }
+
+/* 項目行 */
+.myplan-row { display:grid; grid-template-columns:auto 1fr; gap:12px 16px; align-items:start; }
+.myplan-row-bordered { padding-bottom:16px; border-bottom:1px solid var(--border); }
+.myplan-icon { font-size:28px; line-height:1; }
+.myplan-title { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.myplan-title-sub { font-size:12px; font-weight:400; color:var(--ink-light); margin-left:8px; }
+.myplan-desc { font-size:15px; color:var(--ink-mid); line-height:1.8; }
+
+/* 警告ボックス */
+.myplan-alert { background:#FDF0E8; border-left:3px solid var(--accent); border-radius:4px; padding:10px 14px; margin-top:10px; font-size:14px; color:var(--ink-mid); line-height:1.85; }
+.myplan-alert-title { color:var(--accent); }
+.myplan-alert-strong { color:var(--accent); font-size:15px; }
+
+/* 保険料バッジ */
+.myplan-fee-badge { margin-top:10px; display:inline-flex; align-items:center; gap:10px; background:#FDF0E8; border:1.5px solid var(--accent-light); border-radius:10px; padding:8px 16px; }
+.myplan-fee-badge-label { font-size:11px; color:var(--ink-light); margin-bottom:2px; }
+.myplan-fee-badge-amount { font-size:22px; font-weight:700; color:var(--accent); font-family:var(--serif); }
+.myplan-fee-badge-note { font-size:11px; color:var(--ink-light); line-height:1.6; }
+
+/* 合計ボックス */
+.myplan-total { background:#F0F7F4; border:1.5px solid var(--teal-border); border-radius:12px; padding:16px 20px; }
+.myplan-total-row { display:grid; grid-template-columns:1fr auto; gap:4px; align-items:center; }
+.myplan-total-row-border { margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--teal-border); }
+.myplan-total-row-border2 { margin-bottom:12px; padding-bottom:12px; border-bottom:1.5px solid var(--teal-border); }
+.myplan-total-label { font-size:13px; color:var(--ink-mid); }
+.myplan-total-val { font-size:14px; font-weight:700; color:var(--ink); text-align:right; }
+.myplan-total-sum-label { font-size:15px; font-weight:700; color:var(--teal); }
+.myplan-total-sum-val { font-family:var(--serif); font-size:clamp(24px,4vw,30px); font-weight:700; color:#0F6E56; text-align:right; }
+
+.myplan-note { font-size:12px; color:var(--ink-light); margin-top:-8px; }
+
+/* 三大疾病定義 */
+.sandai-def { background:#F5F5F0; border-left:3px solid var(--ink-light); border-radius:4px; padding:12px 16px; }
+.sandai-def-title { font-size:13px; font-weight:700; color:var(--ink-mid); margin-bottom:6px; }
+.sandai-def-body { font-size:14px; color:var(--ink-mid); line-height:1.9; }
+
+/* ポイントカード */
+.myplan-tips { background:#EAF5F1; border:1.5px solid #A8D9CC; border-radius:12px; padding:16px 20px; display:flex; flex-direction:column; gap:12px; }
+.myplan-tips-title { font-size:14px; font-weight:700; color:#085041; margin-bottom:-4px; }
+.myplan-tips-row { display:flex; gap:10px; align-items:flex-start; }
+.myplan-tips-icon { font-size:18px; flex-shrink:0; }
+.myplan-tips-text { font-size:14px; color:var(--ink-mid); line-height:1.85; }
+.myplan-tips-highlight { background:#fff; border-radius:8px; padding:12px 16px; border-left:3px solid #1D9E75; }
+.myplan-tips-highlight-text { font-size:14px; font-weight:700; color:#0F6E56; line-height:1.8; }
+
+/* NISAリンクボタン中央 */
+.myplan-nisa-btn-wrap { text-align:center; margin-top:4px; }
+.myplan-nisa-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#1D9E75; color:#fff; font-size:16px; font-weight:700;
+  padding:14px 32px; border-radius:12px; text-decoration:none;
+  box-shadow:0 4px 14px rgba(29,158,117,.3); letter-spacing:.04em; transition:all .2s;
+}
+.myplan-nisa-btn:hover { background:#0F6E56; }
+
+/* 決め台詞吹き出し */
+.balloon-body.balloon-dark,
+.balloon-dark {
+  background:#2A3828 !important;
+  border-color:#2A3828 !important;
+  color:#fff;
+}
+.balloon-catchcopy { font-size:clamp(18px,2.8vw,24px); line-height:1.9; color:#fff; font-weight:700; }
+.balloon-catchcopy-key { color:#9FE1CB; font-size:1.15em; }
+
+/* ボタンエリア */
+.cta-buttons { margin-top:28px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+.btn-cta-primary {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#C04B1A; color:#fff; font-size:17px; font-weight:700;
+  padding:16px 32px; border-radius:12px; text-decoration:none;
+  box-shadow:0 4px 14px rgba(192,75,26,.35); letter-spacing:.04em; transition:all .2s;
+}
+.btn-cta-primary:hover { background:#A03A12; }
+.btn-cta-ghost {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#fff; color:#2A3828; font-size:17px; font-weight:700;
+  padding:16px 32px; border-radius:12px; text-decoration:none;
+  border:2px solid #2A3828; box-shadow:0 4px 14px rgba(0,0,0,.10); letter-spacing:.04em; transition:all .2s;
+}
+.btn-cta-ghost:hover { background:#F0F7F4; }
+
+/* SVGフロー図：モバイル対応 */
+.flow-svg-wrap {
+  background:var(--cream); border:1px solid var(--border);
+  border-radius:12px; padding:20px 16px 12px; margin-bottom:16px;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+}
+.flow-svg-wrap svg { min-width:480px; }
+@media(max-width:600px) {
+  .flow-svg-wrap { padding:12px 8px 8px; }
+}
+
+/* 吹き出し：アイコン右 */
+.balloon-reverse { flex-direction:row-reverse; margin-top:20px; }
+
+/* ── スライダーカード内の追加クラス ── */
+.slider-card-title-mt { margin-top:16px; }
+
+/* ── 保険 vs NISA 注釈グリッド ── */
+.compare-notes-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+.compare-note { font-size:13px; color:var(--ink-mid); border-radius:4px; padding:7px 12px; line-height:1.6; }
+.compare-note-ins  { background:#F5F0EB; border-left:3px solid var(--accent); }
+.compare-note-nisa { background:#EDF7F4; border-left:3px solid var(--teal); }
+
+/* ── 保険 vs NISA 対比カード ── */
+.compare-cards-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px; align-items:stretch; }
+.compare-card { background:#fff; border-radius:12px; padding:20px 18px; text-align:center; display:flex; flex-direction:column; }
+.compare-card-ins  { border:2px solid var(--accent); }
+.compare-card-nisa { border:2px solid var(--teal); }
+.compare-card-title { font-size:clamp(16px,2.4vw,20px); font-weight:700; letter-spacing:.06em; margin-bottom:12px; min-height:3.2em; display:flex; align-items:center; justify-content:center; }
+.compare-card-title-ins  { color:var(--accent); }
+.compare-card-title-nisa { color:var(--teal); }
+.compare-card-sub { font-size:clamp(14px,2vw,16px); color:var(--ink-mid); margin-bottom:4px; }
+.compare-card-amount { font-family:var(--serif); font-size:clamp(24px,4vw,32px); font-weight:700; margin-bottom:14px; min-height:2em; display:flex; align-items:center; justify-content:center; }
+.compare-card-amount-ins  { color:var(--accent); }
+.compare-card-amount-nisa { color:var(--teal); }
+.compare-card-footer { border-radius:0 0 8px 8px; padding-top:14px; margin-top:auto; }
+.compare-card-footer-ins  { border-top:1px solid var(--accent-light); }
+.compare-card-footer-nisa { border-top:1px solid var(--teal-border); }
+.compare-card-total { font-family:var(--serif); font-size:clamp(28px,5vw,38px); font-weight:700; min-height:1.5em; display:flex; align-items:center; justify-content:center; }
+.compare-card-total-ins  { color:var(--accent); }
+.compare-card-total-nisa { color:var(--teal); }
+
+/* バッジ（支払うだけ/貯まる） */
+.compare-badge { display:inline-flex; align-items:center; gap:5px; border-radius:999px; padding:5px 14px; margin-top:10px; }
+.compare-badge-blue { background:#E8F0FE; border:1.5px solid #93B4F5; }
+.compare-badge-red  { background:#FAECE7; border:1.5px solid var(--accent-light); }
+.compare-badge-icon { font-size:16px; }
+.compare-badge-text { font-size:13px; font-weight:700; }
+.compare-badge-text-blue { color:#2C5FAA; }
+.compare-badge-text-red  { color:var(--accent); }
+
+.compare-disclaimer { font-size:clamp(12px,1.5vw,13px); color:var(--ink-light); margin-top:8px; text-align:center; }
+
+/* ── 棒グラフカード ── */
+.bar-chart-card { background:#fff; border:1.5px solid var(--border); border-radius:14px; padding:20px 20px 16px; margin-bottom:28px; }
+.bar-chart-title { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.bar-chart-sub   { font-size:13px; color:var(--ink-light); margin-bottom:16px; }
+.bar-chart-wrap  { position:relative; width:100%; }
+.bar-chart-legend { display:flex; gap:20px; justify-content:center; margin-top:12px; font-size:13px; font-weight:700; }
+.bar-chart-legend-item { display:flex; align-items:center; gap:6px; }
+.bar-chart-legend-dot { display:inline-block; width:14px; height:14px; border-radius:3px; }
+.bar-chart-legend-dot-ins  { background:#E05252; }
+.bar-chart-legend-dot-nisa { background:#4A90D9; }
+
+/* ── 前提カード ── */
+.premise-card { background:#EAF5F1; border:1.5px solid #A8D9CC; border-radius:14px; overflow:hidden; margin-bottom:28px; }
+.premise-card-top { padding:18px 24px 16px; }
+.premise-card-eyebrow { font-size:14px; font-weight:700; color:#4A9882; letter-spacing:.04em; margin-bottom:4px; text-align:center; }
+.premise-card-heading { font-size:16px; font-weight:700; color:#085041; letter-spacing:.04em; margin-bottom:14px; text-align:center; }
+.premise-nisa-box { width:100%; text-align:center; background:#fff; border-radius:12px; padding:20px 16px; border:2px solid #1D9E75; }
+.premise-nisa-label { font-size:15px; color:#0F6E56; font-weight:600; margin-bottom:8px; }
+.premise-nisa-amount { font-family:var(--serif); font-size:clamp(36px,6vw,52px); font-weight:700; color:#1D9E75; line-height:1.2; }
+.premise-nisa-note { font-size:13px; color:#4A9882; margin-top:8px; }
+.premise-card-bottom { background:#1A1A1A; padding:20px 28px; text-align:center; }
+.premise-card-bottom-text { font-size:17px; font-weight:700; color:#fff; line-height:2; }
+.premise-card-bottom-accent { text-decoration:underline; color:#9FE1CB; }
+
+/* ── section-label / section-title 調整 ── */
+.section-label-lg { font-size:16px; font-weight:700; letter-spacing:.08em; margin-bottom:8px; }
+.section-title-mb { margin-bottom:16px; }
+
+/* ── レスポンシブ追加 ── */
+@media(max-width:600px) {
+  .compare-notes-grid  { grid-template-columns:1fr; }
+  .compare-cards-grid  { grid-template-columns:1fr; }
+  .myplan-card-body    { padding:16px 16px; }
+  .premise-card-bottom { padding:16px 18px; }
+  .premise-card-bottom-text { font-size:15px; }
+}
+
+/* ── ページ固有の微調整 ── */
+.hero-sim { padding:48px 24px 40px; }
+.hero-sim p { font-family:var(--serif); font-size:16px; color:var(--ink-mid); margin:0 0 16px; }
+.section-teal-bg { background:#F0F7F4; border-top:1px solid var(--border); }
+.footer-copy { margin-bottom:8px; }
+.canvas-full { width:100%; display:block; }
+.hero-lead-serif { font-family:var(--serif); font-size:16px; color:var(--ink-mid); margin:0 0 16px; }
+.sandai-def-list { display:inline-block; margin-top:4px; }
+
+/* ── ケース名タイトルバー ── */
+.case-title-bar {
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+
+/* ── フローカード補足注釈（大腸ポリープなど） ── */
+.fcd-note      { font-size:12px; }
+.fcd-note-red  { color:#C04B1A; }
+.fcd-note-blue { color:#185FA5; }
+
+/* ── 比較バー：クラスベース勝敗表示 ── */
+.comp-hanamaru { display:none; }
+.comp-hanamaru.comp-hanamaru-show { display:block; }
+
+.comp-card.comp-winner.nisa { border-width:3px; border-color:#1D9E75; }
+.comp-card.comp-winner.ins  { border-width:3px; border-color:#C04B1A; }
+.comp-card.comp-loser { opacity:.45; }
+
+/* ── フローカード：transition-delay クラス ── */
+.flow-card-delay-0 { transition-delay:0s; }
+.flow-card-delay-1 { transition-delay:.1s; }
+.flow-card-delay-2 { transition-delay:.2s; }
+.flow-card-delay-3 { transition-delay:.3s; }
+
+/* ── タブ：フォーカスアウトライン（キーボード操作） ── */
+.case-tab:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:2px;
+}

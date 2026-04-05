@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60代・老後の保険戦略｜保険見直しナビ</title>
+  <meta name="description" content="定年前後の保険設計、医療費と保険の関係、節約した保険料をNISAへ回す戦略。61歳PMの実際の保険設計を公開。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+    .strategy-card {
+      background: var(--warm-white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px 18px;
+    }
+    .strategy-card-num { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: .08em; margin-bottom: 8px; }
+    .strategy-card-title { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .strategy-card-body { font-size: 13px; color: var(--ink-mid); line-height: 1.8; }
+
+    .flow-section { margin-bottom: 28px; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    .flow-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-age {
+      min-width: 64px; text-align: center;
+      font-family: var(--serif); font-size: 15px; font-weight: 700;
+      color: var(--accent); flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .flow-content strong { font-size: 15px; color: var(--ink); display: block; margin-bottom: 4px; }
+    .flow-content p { font-size: 13px; color: var(--ink-mid); line-height: 1.75; margin: 0; }
+
+    .real-design {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden; margin-bottom: 24px;
+    }
+    .real-design-header {
+      background: var(--ink); color: #fff;
+      padding: 14px 20px; font-family: var(--serif); font-size: 15px; font-weight: 700;
+    }
+    .real-design-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px; border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .real-design-row:last-child { border-bottom: none; }
+    .real-design-row.total { background: var(--accent-bg); font-weight: 700; }
+    .rd-label { color: var(--ink-mid); }
+    .rd-val { font-family: var(--serif); font-weight: 700; color: var(--ink); }
+    .real-design-row.total .rd-val { color: var(--accent); font-size: 18px; }
+
+    .kougaku-box {
+      background: var(--teal-bg); border: 1px solid var(--teal-border);
+      border-radius: 8px; padding: 20px 22px; margin-bottom: 20px;
+    }
+    .kougaku-title { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--teal); }
+    .kougaku-body  { font-size: 14px; color: var(--ink-mid); line-height: 1.85; }
+    .kougaku-body strong { color: var(--ink); }
+
+    .nisa-bridge {
+      background: var(--warm-white); border: 1.5px solid var(--teal);
+      border-radius: 8px; padding: 22px 24px; margin-bottom: 20px;
+    }
+    .nisa-bridge-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--teal); margin-bottom: 10px; }
+    .nisa-bridge-body  { font-size: 14px; color: var(--ink-mid); line-height: 1.85; margin-bottom: 16px; }
+
+    .shin-voice {
+      background: var(--accent-bg); border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0;
+      font-family: var(--serif); font-size: 14px; line-height: 1.9; color: var(--ink);
+    }
+    .shin-voice footer { font-size: 12px; color: var(--accent); margin-top: 8px; }
+
+    @media (max-width: 600px) {
+      .strategy-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">保険見直し<span>ナビ</span></a>
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="index.html#checklist">払いすぎチェック</a>
+      <a href="simulator.html">シミュレーター</a>
+      <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank">NISAサイト</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:48px 24px 40px;">
+  <div class="hero-inner fade-in">
+    <span class="hero-eyebrow">60代向け STRATEGY</span>
+    <h1>60代・老後の<em>保険戦略</em>｜何を残し、何を手放すか</h1>
+    <p class="hero-lead">
+      定年前後は、保険を「見直す絶好のタイミング」です。<br>
+      必要な保障が大きく変わるこの時期に、正しい判断をするための考え方をお伝えします。
+    </p>
+  </div>
+</section>
+
+<!-- 60代の変化 -->
+<section class="section" style="background:var(--warm-white);border-top:1px solid var(--border);">
+  <div class="section-inner fade-in">
+    <div class="section-label">60代に起きる変化</div>
+    <h2 class="section-title">定年前後で「必要な保障」は激変する</h2>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="strategy-card-num">変化①</div>
+        <div class="strategy-card-title">収入が変わる</div>
+        <div class="strategy-card-body">給与収入が減少・停止し、年金収入へ切り替わる。収入保障・就業不能保障は不要になることが多い。</div>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-card-num">変化②</div>
+        <div class="strategy-card-title">扶養家族が減る</div>
+        <div class="strategy-card-body">子どもの独立、住宅ローンの完済。「遺された家族を守る」ための高額死亡保障は大幅に不要になる。</div>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-card-num">変化③</div>
+        <div class="strategy-card-title">医療リスクが高まる</div>
+        <div class="strategy-card-body">がん・心疾患・脳卒中の罹患率が上昇。医療保険・がん保険の重要性は相対的に増す。</div>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-card-num">変化④</div>
+        <div class="strategy-card-title">貯蓄・資産が育つ</div>
+        <div class="strategy-card-body">NISA・iDeCo・退職金で資産が増えるほど、保険に頼る必要が減る。自己負担できる額が増える。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 年齢別ロードマップ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner fade-in">
+    <div class="section-label">年齢別ロードマップ</div>
+    <h2 class="section-title">55歳〜70歳・保険の見直しタイムライン</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-age">55歳</div>
+        <div class="flow-content">
+          <strong>定年を意識した「棚卸し」を始める</strong>
+          <p>現在の保険料総額を確認。子どもの独立状況・ローン残高を整理し、不要な特約を洗い出すタイミング。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-age">60歳</div>
+        <div class="flow-content">
+          <strong>定年時に大幅見直しを実行する</strong>
+          <p>収入が変わるこのタイミングが最大のチャンス。死亡保障を大幅に削減。就業不能・収入保障系の特約は解約を検討。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-age">65歳</div>
+        <div class="flow-content">
+          <strong>年金開始・医療保障にシフト</strong>
+          <p>年金受給開始。この時点で医療・がん保険を中心にシンプルな設計に。節約した保険料はNISAの取り崩しへ。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-age">70歳〜</div>
+        <div class="flow-content">
+          <strong>保険より「貯蓄で備える」へ切り替え</strong>
+          <p>資産が十分育っていれば、保険を最小化して自己負担に切り替えることも選択肢。介護保険の検討を始める。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 高額療養費制度 -->
+<section class="section" style="background:var(--warm-white);border-top:1px solid var(--border);">
+  <div class="section-inner fade-in">
+    <div class="section-label">知っておくべき制度</div>
+    <h2 class="section-title">「高額療養費制度」を知ると、保険の必要額がわかる</h2>
+    <div class="balloon type-point">
+      <img src="img/chara-point.png" alt="真-SHIN-" class="balloon-chara">
+      <div class="balloon-body">
+        <div class="balloon-label">保険を見直す前に必ず知ってほしいこと</div>
+        <div class="balloon-text">「この制度を知るだけで、<strong>保険への考え方が180度変わります。</strong><br>
+        私もこれを知った日から、医療保険の見直しを決意しました。」</div>
+      </div>
+    </div>
+    <div class="kougaku-box">
+      <div class="kougaku-title">高額療養費制度とは</div>
+      <div class="kougaku-body">
+        1か月の医療費の自己負担額が一定額を超えた場合、超えた分が後から払い戻される制度です。<br><br>
+        年収約370〜770万円の方（一般的な会社員）の場合、1か月の自己負担上限は
+        <strong>約8万7千円〜9万円程度</strong>です。
+        どれほど高額な治療を受けても、この金額以上は基本的に払わなくていい。<br><br>
+        つまり「入院・手術で数百万かかる」という不安は、多くの場合は過大です。
+        この制度を理解してから保険の必要額を計算すると、必要な保障がぐっと下がります。
+      </div>
+    </div>
+    <div class="shin-voice">
+      「高額療養費制度の存在を知ったとき、医療保険への考え方が180度変わりました。
+      『入院したら大変なことになる』という漠然とした不安で、必要以上の保険に入っていたと気づきました。」
+      <footer>— 真-SHIN-</footer>
+    </div>
+  </div>
+</section>
+
+<!-- 真-SHIN-の実際の保険設計 -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner fade-in">
+    <div class="section-label">実録公開</div>
+    <h2 class="section-title">真-SHIN-（61歳）の実際の保険設計</h2>
+    <div class="balloon type-smile">
+      <img src="img/chara-smile.png" alt="真-SHIN-" class="balloon-chara">
+      <div class="balloon-body">
+        <div class="balloon-label">実録公開</div>
+        <div class="balloon-text">「恥ずかしいですが、全部公開します。<br>
+        <strong>月1万1千円</strong>でどんな保障を持っているか、参考にしてください。」</div>
+      </div>
+    </div>
+    <div class="real-design">
+      <div class="real-design-header">見直し後の保険構成（月額合計：1万1千円）</div>
+      <div class="real-design-row">
+        <div class="rd-label">
+          定期死亡保険（掛け捨て）<br>
+          <span style="font-size:11px;color:var(--ink-light);">保障額：500万円。葬儀代＋残債を想定。</span>
+        </div>
+        <div class="rd-val">月 3,500円</div>
+      </div>
+      <div class="real-design-row">
+        <div class="rd-label">
+          医療保険（入院一時金型）<br>
+          <span style="font-size:11px;color:var(--ink-light);">入院一時金10万円＋手術給付。シンプルな設計。</span>
+        </div>
+        <div class="rd-val">月 4,200円</div>
+      </div>
+      <div class="real-design-row">
+        <div class="rd-label">
+          がん保険（診断一時金型）<br>
+          <span style="font-size:11px;color:var(--ink-light);">診断一時金100万円。50代以降の優先度を考慮。</span>
+        </div>
+        <div class="rd-val">月 3,300円</div>
+      </div>
+      <div class="real-design-row total">
+        <div class="rd-label">合計</div>
+        <div class="rd-val">月 11,000円</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-light);margin-bottom:24px;">
+      ※ 上記は真-SHIN-個人の構成です。最適な設計は年齢・家族構成・資産状況により異なります。
+    </p>
+
+    <div class="nisa-bridge">
+      <div class="nisa-bridge-title">節約した月1万2千円の行き先</div>
+      <div class="nisa-bridge-body">
+        見直し前との差額・月1万2千円は、そのまま新NISAの積立額に上乗せしました。
+        年間14万4千円。10年続ければ、運用次第では200万円以上の資産になる計算です。
+        「保険の見直し」と「NISAへの移行」はセットで考えることが、60代の資産戦略の核心です。
+      </div>
+      <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank" class="btn-primary" style="font-size:13px;padding:10px 20px;">新NISAサイト「ほっとけ投資」を見る →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-final">
+  <div class="section-inner fade-in">
+    <div class="section-label">次のアクション</div>
+    <h2 class="section-title">今日できることから始めよう</h2>
+    <p style="font-size:14px;color:var(--ink-mid);margin-bottom:28px;">
+      まずシミュレーターで「あなたの必要保障額」を確認してみてください。
+    </p>
+    <div class="cta-button-group">
+      <a href="simulator.html" class="btn-primary">必要保障額を計算する</a>
+      <a href="review-guide.html" class="btn-ghost">見直し手順を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">保険見直し<span>ナビ</span></div>
+  <p style="margin-bottom:8px;">CrossOver — 真-SHIN- の資産見直し実録シリーズ</p>
+  <p>
+    <a href="index.html">トップ</a> ｜
+    <a href="simulator.html">シミュレーター</a> ｜
+    <a href="https://crossover4029-web.github.io/nisa-site/" target="_blank">NISAサイト</a>
+  </p>
+  <p style="margin-top:16px;font-size:11px;">※ 当サイトはアフィリエイト広告を含みます。掲載情報は個人の体験・調査に基づくものです。</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
