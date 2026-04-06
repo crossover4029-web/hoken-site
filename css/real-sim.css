@@ -322,6 +322,7 @@
 .premise-card-bottom { background:#1A1A1A; padding:20px 28px; text-align:center; }
 .premise-card-bottom-text { font-size:17px; font-weight:700; color:#fff; line-height:2; }
 .premise-card-bottom-accent { text-decoration:underline; color:#9FE1CB; }
+.premise-card-bottom-sub { display:block; font-size:13px; font-weight:400; color:rgba(255,255,255,.65); margin-top:8px; line-height:1.7; }
 
 /* ── section-label / section-title 調整 ── */
 .section-label-lg { font-size:16px; font-weight:700; letter-spacing:.08em; margin-bottom:8px; }
@@ -342,17 +343,25 @@
 .section-teal-bg { background:#F0F7F4; border-top:1px solid var(--border); }
 .footer-copy { margin-bottom:8px; }
 .canvas-full { width:100%; display:block; }
-.hero-lead-serif { font-family:var(--serif); font-size:16px; color:var(--ink-mid); margin:0 0 16px; }
+.hero-lead-serif { font-family:var(--serif); font-size:clamp(19px,2.6vw,23px); font-weight:600; color:var(--ink); margin:0 0 20px; line-height:1.7; }
 .sandai-def-list { display:inline-block; margin-top:4px; }
 
 /* ヒーロー免責文 */
 .hero-disclaimer {
-  font-size:13px; color:rgba(255,255,255,.75);
-  background:rgba(0,0,0,.18); border-radius:6px;
+  font-size:13px; color:var(--ink-mid);
+  background:var(--cream); border-radius:6px;
   padding:10px 14px; line-height:1.8;
-  margin:0 0 16px; border-left:3px solid rgba(255,255,255,.4);
+  margin:16px 0 0; border-left:3px solid var(--border);
 }
 
+
+/* hero-lead：ヒーロー内で大きく・白系に上書き */
+.hero-sim .hero-lead {
+  font-size:clamp(17px,2.2vw,20px);
+  color:var(--ink-mid);
+  line-height:1.95;
+  margin-bottom:0;
+}
 /* 入力データ非送信の明記 */
 .input-privacy-note {
   font-size:13px; color:var(--ink-light);

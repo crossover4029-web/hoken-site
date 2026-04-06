@@ -7,6 +7,10 @@
 const CASES = [
   {
     id:'mocho', icon:'🏥', name:'盲腸', sub:'入院5〜7日・手術',
+    // ▼ SVGフロー図データ
+    svg:{ total:'約25万円', cover:'約17万円戻る', self:'約8万円', insAmt:'約5〜8万円', insWin:false, conclusion:'盲腸ならNISAに10万円あれば保険なしでも乗り越えられます' },
+    // ▼ 比較バーデータ
+    comp:{ nisaAmt:'約200万円', nisaLabel:'8万円を余裕でカバーできる', insAmt:'約5〜8万円', insLabel:'給付金の目安', winner:'nisa' },
     cards:[
       {icon:'🏥',type:'red',  label:'病院からの請求',          title:'医療費の総額',              amount:'約25万円',         desc:'入院6日・手術・麻酔・検査などの合計費用です。'},
       {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'約17万円',         desc:'窓口では一度全額払いますが、月の自己負担上限（30代会社員で約8〜9万円）を超えた分は後日払い戻されます。事前に「限度額適用認定証」を用意すると、窓口負担を最初から上限額に抑えられます。'},
@@ -14,12 +18,14 @@ const CASES = [
       {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'約5〜8万円',       desc:'入院日額5,000円×6日＋手術給付金。加入内容によって変わります。'},
     ],
     ins: '給付金5〜8万円で自己負担8万円をほぼカバーできます。<br>ただし<strong>今まで払い続けた保険料の累計</strong>と比べると…',
-    nisa:'NISAに<strong>約8万円</strong>あれば今すぐ払えます。<br>20歳から積み立てていれば余裕でカバーできます。',
+    nisa:'NISAに<strong>約8万円</strong>あれば今すぐ払えます。<br>20歳から積み立てていれば余裕でカバーできます。<br><small>※売却・出金には通常3〜5営業日かかります。</small>',
     verdict:'nisa',
     conclusion:'盲腸なら、<strong>NISAに10万円あれば保険なしでも乗り越えられます。</strong><br>毎月払い続けた保険料の累計と比べると、考えさせられます。',
   },
   {
     id:'accident', icon:'🚗', name:'交通事故', sub:'骨折・入院2週間',
+    svg:{ total:'約60万円', cover:'約51万円戻る', self:'約9万円', insAmt:'約10〜14万円', insWin:false, conclusion:'自己負担は約9万円。NISA残高200万円があれば余裕でカバーできます' },
+    comp:{ nisaAmt:'約200万円', nisaLabel:'9万円をすぐ引き出せる', insAmt:'約10〜14万円', insLabel:'給付金の目安', winner:'nisa' },
     cards:[
       {icon:'🚗',type:'red',  label:'病院からの請求',          title:'医療費の総額',              amount:'約60万円',         desc:'入院14日・手術・リハビリ・検査などの合計費用です。'},
       {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'約51万円',         desc:'窓口では一度全額払いますが、月の自己負担上限（約8〜9万円）を超えた分は後日払い戻されます。長期入院でも上限は変わりません。事前に「限度額適用認定証」を用意すると窓口負担を最初から抑えられます。'},
@@ -27,12 +33,14 @@ const CASES = [
       {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'約10〜14万円',     desc:'入院日額5,000円×14日＋手術給付金。給付金は9万円の自己負担を上回りますが、毎月の保険料累計との比較が大切です。'},
     ],
     ins: '給付金10〜14万円で自己負担9万円をカバーできます。<br>ただし<strong>毎月払い続けた保険料の累計</strong>と比べると、コスト面では見直しが必要です。',
-    nisa:'NISAに<strong>約200万円</strong>あれば9万円はすぐ引き出せます。<br>残高に対してわずか4〜5%の支出です。',
+    nisa:'NISAに<strong>約200万円</strong>あれば9万円はすぐ引き出せます。<br>残高に対してわずか4〜5%の支出です。<br><small>※売却・出金には通常3〜5営業日かかります。</small>',
     verdict:'nisa',
     conclusion:'交通事故の自己負担は<strong>約9万円。NISA残高200万円あれば余裕でカバーできます。</strong><br>毎月払い続けた保険料の累計を考えると、NISAで備える方が合理的なケースです。',
   },
   {
     id:'polyp', icon:'🔬', name:'大腸ポリープ', sub:'日帰り〜1泊・内視鏡切除',
+    svg:{ total:'約3〜20万円', cover:'ほぼなし〜一部適用', self:'約2〜20万円', insAmt:'約5〜10万円', insWin:false, conclusion:'1つなら2〜3万円、複数でも最大20万円。NISA200万円があればカバーできます' },
+    comp:{ nisaAmt:'約200万円', nisaLabel:'複数でも最大20万円をカバーできる', insAmt:'約5〜10万円', insLabel:'※複数の場合、給付金が自己負担以下に', winner:'nisa' },
     cards:[
       {icon:'🔬',type:'red',  label:'病院からの請求',          title:'医療費の総額',              amount:'約3〜5万円',       desc:'日帰り内視鏡手術。検査・切除・病理検査の合計です。<br><span class="fcd-note fcd-note-red">※大腸ポリープが複数見つかった場合：約10〜20万円</span>'},
       {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'ほぼなし',         desc:'費用が低いため高額療養費の対象外になることがほとんど。3割負担がそのままかかります。<br><span class="fcd-note fcd-note-blue">※複数の場合は一部適用されることもあります</span>'},
@@ -40,17 +48,19 @@ const CASES = [
       {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'約5〜10万円',      desc:'手術給付金が5〜10万円出るケースが多く、1つの場合は自己負担を上回ります。複数の場合は給付金が自己負担を下回ることも。毎月の保険料累計との比較が重要です。'},
     ],
     ins: '1つの場合、給付金5〜10万円で自己負担2〜3万円を上回ります。<br>ただし<strong>毎月払い続けた保険料の累計</strong>と比べると、コスト優位とは言い切れません。',
-    nisa:'NISAに<strong>約200万円</strong>あれば1〜2万円〜最大20万円（複数の場合）まで問題なく引き出せます。',
+    nisa:'NISAに<strong>約200万円</strong>あれば1〜2万円〜最大20万円（複数の場合）まで問題なく引き出せます。<br><small>※売却・出金には通常3〜5営業日かかります。</small>',
     verdict:'nisa',
     conclusion:'大腸ポリープの自己負担は<strong>1つなら2〜3万円、複数でも最大20万円程度。NISA残高200万円があればどちらのケースもカバーできます。</strong><br>保険の給付金が上回って見える場合も、月々の保険料累計と比べてみましょう。',
   },
   {
     id:'cancer', icon:'🎗️', name:'がん（初期）', sub:'手術＋入院2〜3週間',
+    svg:{ total:'約100〜150万円', cover:'約90〜140万円戻る', self:'月8〜9万円×数ヶ月', insAmt:'診断一時金100万円＋', insWin:true, conclusion:'がんは保険の価値が最も高い。診断一時金の安心感は別格です' },
+    comp:{ nisaAmt:'100万円以上必要', nisaLabel:'長期治療でリスクあり', insAmt:'診断一時金100万円＋', insLabel:'給付金の目安（有利）', winner:'ins' },
     cards:[
       {icon:'🎗️',type:'red',  label:'病院からの請求',          title:'医療費の総額',              amount:'約100〜150万円',   desc:'手術・入院・放射線治療・抗がん剤など。治療内容で大きく変わります。'},
-      {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'約90〜140万円',    desc:'窓口では一度全額払いますが、高額療養費制度で月の自己負担は約8〜9万円に抑えられます（後日払い戻し）。事前に「限度額適用認定証」を用意すれば窓口負担を最初から上限額に抑えられます。長期治療でも毎月上限があります。'},
+      {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'約90〜140万円',    desc:'窓口では一度全額払いますが、高額療養費制度で月の自己負担は約8〜9万円に抑えられます（後日払い戻し）。事前に「限度額適用認定証」を用意すれば窓口負担を最初から上限額に抑えられます。長期治療でも毎月上限があります。<br><span class="fcd-note fcd-note-blue">💡 <strong>多数該当：</strong>同一世帯で直近12ヶ月以内に3回以上上限に達すると、4回目から自己負担上限がさらに下がります（30代一般で約44,400円）。治療が数ヶ月続く場合は申請を忘れずに。</span><br><span class="fcd-note fcd-note-blue">💡 <strong>世帯合算：</strong>同じ健康保険に加入する家族の自己負担を合算して申請できます（各自の負担が21,000円以上のものが対象）。</span>'},
       {icon:'💳',type:'red',  label:'実際に財布から出るお金',   title:'あなたが払う金額',           amount:'月8〜9万円×数ヶ月', desc:'治療が数ヶ月続く場合、毎月自己負担が発生。差額ベッド代・交通費・仕事を休む間の収入減も考慮が必要です。'},
-      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'診断一時金100万円＋入院給付金', desc:'がん保険なら診断一時金が一括で下りることが多い。「病気とわかった瞬間に現金が入る」精神的な安心感は大きいです。'},
+      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'診断一時金100万円＋入院給付金', desc:'がん保険なら診断一時金が一括で下りることが多い。「病気とわかった瞬間に現金が入る」精神的な安心感は大きいです。<br><span class="fcd-note fcd-note-blue">※診断一時金は保険会社・商品により「上皮内がんは対象外」「初回診断のみ」「入院が条件」など支払い要件が異なります。加入前に約款で必ず確認してください。</span>'},
     ],
     ins: '診断一時金100万円が一括で入ります。<strong>治療中の生活費・収入減をカバー</strong>できる点が最大のメリット。精神的にも楽になります。',
     nisa:'NISAに<strong>100万円以上</strong>あれば対応できます。<br>ただし治療が長引くと資産が大きく減るリスクがあります。',
@@ -59,11 +69,13 @@ const CASES = [
   },
   {
     id:'cardiac', icon:'❤️‍🔥', name:'心筋梗塞・脳卒中', sub:'緊急入院・長期リハビリ',
+    svg:{ total:'約200〜500万円', cover:'大部分が対象', self:'月8〜9万円×数ヶ月', insAmt:'診断一時金50〜100万円＋', insWin:true, conclusion:'長期入院＋収入減が重なるとNISA200万でも不足リスク。保険の検討価値が高い' },
+    comp:{ nisaAmt:'200万円でも不足リスク', nisaLabel:'長期入院＋収入減で資産が枯渇', insAmt:'診断一時金50〜100万円＋', insLabel:'三大疾病保険が有効', winner:'ins' },
     cards:[
       {icon:'❤️‍🔥',type:'red',  label:'病院からの請求',          title:'医療費の総額',              amount:'約200〜500万円',   desc:'緊急手術・ICU・長期入院・リハビリを含めると総額は非常に高額になります。'},
-      {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'大部分が対象',     desc:'窓口では一度全額払いますが、高額療養費制度で月の自己負担は約8〜9万円に抑えられます（後日払い戻し）。事前に「限度額適用認定証」を用意すれば窓口負担を最初から抑えられます。ただし複数月にわたるため累計負担は増えます。'},
+      {icon:'🏛️',type:'blue', label:'高額療養費制度のおかげで', title:'国が肩代わりしてくれる金額', amount:'大部分が対象',     desc:'窓口では一度全額払いますが、高額療養費制度で月の自己負担は約8〜9万円に抑えられます（後日払い戻し）。事前に「限度額適用認定証」を用意すれば窓口負担を最初から抑えられます。ただし複数月にわたるため累計負担は増えます。<br><span class="fcd-note fcd-note-blue">💡 <strong>多数該当：</strong>直近12ヶ月以内に3回以上上限に達すると、4回目から自己負担上限がさらに下がります（30代一般で約44,400円）。3〜6ヶ月の入院では特に大きな恩恵があります。</span><br><span class="fcd-note fcd-note-blue">💡 <strong>世帯合算：</strong>同じ健康保険に加入する家族それぞれの自己負担（21,000円以上のもの）を合算して申請できます。家族に別の医療費がかかっている場合は必ず確認を。</span>'},
       {icon:'💳',type:'red',  label:'実際に財布から出るお金',   title:'あなたが払う金額',           amount:'月8〜9万円×3〜6ヶ月', desc:'急性期＋リハビリで3〜6ヶ月の入院になるケースも。後遺症が残ると収入減・介護費用も発生します。'},
-      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'診断一時金50〜100万円＋', desc:'三大疾病保険・特定疾病保険なら診断一時金が下りるケースが多い。生活習慣病特約があればさらに手厚くなります。'},
+      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'診断一時金50〜100万円＋', desc:'三大疾病保険・特定疾病保険なら診断一時金が下りるケースが多い。生活習慣病特約があればさらに手厚くなります。<br><span class="fcd-note fcd-note-blue">※診断一時金は「急性心筋梗塞：60日以上の労働制限が条件」「脳卒中：60日以上の後遺症が条件」など支払い要件を設ける商品があります。加入前に約款を必ず確認してください。</span>'},
     ],
     ins: '診断一時金50〜100万円＋入院給付金で、<strong>長期治療・収入減をカバー</strong>できます。<br>後遺症が残った場合の生活設計にも保険が役立ちます。',
     nisa:'NISAに<strong>200万円</strong>あっても、長期入院＋収入減が重なると<strong>不足するリスク</strong>があります。',
@@ -72,16 +84,18 @@ const CASES = [
   },
   {
     id:'mental', icon:'🧠', name:'うつ病', sub:'休職・通院3〜6ヶ月',
+    svg:{ total:'収入の1/3消える', cover:'傷病手当金67%', self:'約30〜60万円', insAmt:'就業不能給付金', insWin:false, conclusion:'短期ならNISA200万でカバー可。長期化・自営業の場合は就業不能保険を検討' },
+    comp:{ nisaAmt:'約200万円', nisaLabel:'3〜4ヶ月の不足をカバーできる', insAmt:'約30〜60万円', insLabel:'3ヶ月休職の場合の不足額目安', winner:'nisa' },
     cards:[
       {icon:'🧠',type:'red',  label:'仕事への影響',            title:'休職中の収入減',            amount:'月収の約1/3が消える', desc:'傷病手当金（月収の2/3）が最長1年6ヶ月支給されますが、残り1/3は自己負担。生活費が不足します。'},
-      {icon:'🏛️',type:'blue', label:'国の制度のおかげで',       title:'傷病手当金',                amount:'月収の約67%',       desc:'健康保険の傷病手当金で月収の2/3が支給されます。会社員なら申請できます。自営業・フリーランスは対象外です。'},
+      {icon:'🏛️',type:'blue', label:'国の制度のおかげで',       title:'傷病手当金',                amount:'月収の約67%',       desc:'健康保険の傷病手当金で月収の2/3が支給されます。会社員・公務員など健康保険加入者が申請できます。<br><span class="fcd-note fcd-note-red">⚠️ 自営業・フリーランスは国民健康保険のため傷病手当金は支給されません。収入が完全にゼロになるリスクがあります。</span>'},
       {icon:'💳',type:'red',  label:'実際に財布から出るお金',   title:'3ヶ月休職した場合の不足額', amount:'約30〜60万円',      desc:'月収の1/3×3ヶ月＋通院費・薬代・生活費の変化など。回復が長引くと半年〜1年以上になることも。'},
-      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'就業不能給付金・通院給付金', desc:'就業不能保険があれば月10〜20万円が支給されます。ただし「精神疾患は対象外」の保険も多いので加入時に必ず確認を。'},
+      {icon:'🛡️',type:'green',label:'保険から受け取れるお金',   title:'給付金の目安',              amount:'就業不能給付金・通院給付金', desc:'就業不能保険があれば月10〜20万円が支給されます。ただし「精神疾患は対象外」の保険も多いので加入時に必ず確認を。<br><span class="fcd-note fcd-note-red">⚠️ <strong>待期期間（免責期間）に注意：</strong>就業不能保険には給付が始まるまでの「待期期間」があり、一般的に60〜180日間は給付金が出ません。精神疾患では180日（約6ヶ月）に設定している保険会社が多く、その間の生活費は自己資金で賄う必要があります。NISAや貯蓄でこの期間をカバーできるかも確認しておきましょう。</span>'},
     ],
-    ins: 'うつ病対応の<strong>就業不能保険</strong>があれば、長期の休職中も収入を補えます。<br>回復が1年を超えるケースでは<strong>保険の検討価値が高い</strong>です。',
+    ins: 'うつ病対応の<strong>就業不能保険</strong>があれば、長期の休職中も収入を補えます。<br>回復が1年を超えるケース、または<strong>自営業・フリーランス（傷病手当金の対象外）</strong>では保険の検討価値が特に高いです。<br><small>⚠️ 精神疾患の待期期間は180日（約6ヶ月）が多く、給付開始までの生活費は別途確保が必要です。</small>',
     nisa:'NISAに<strong>約200万円</strong>あれば3〜4ヶ月の不足はカバーできます。<br>ただし回復が長引くと資産が大きく減り、精神的なプレッシャーになるリスクもあります。',
     verdict:'both',
-    conclusion:'うつ病は<strong>現代人に最も身近なリスク</strong>です。<br>3〜6ヶ月の短期なら<strong>NISA200万円でギリギリ対応可能</strong>。ただし長期化すると資産が尽きるリスクがあるため、<strong>長引きそうな場合は就業不能保険の検討を。</strong>精神疾患が対象かどうか必ず確認してください。',
+    conclusion:'うつ病は<strong>現代人に最も身近なリスク</strong>です。<br>3〜6ヶ月の短期なら<strong>NISA200万円でギリギリ対応可能</strong>。ただし長期化すると資産が尽きるリスクがあるため、<strong>長引きそうな場合は就業不能保険の検討を。</strong>精神疾患が対象かどうか必ず確認してください。<br>なお就業不能保険は<strong>精神疾患の待期期間が約180日</strong>の商品が多く、給付が始まるまでの約6ヶ月分の生活費はNISAや貯蓄でカバーする前提が必要です。',
   },
 ];
 
@@ -269,16 +283,8 @@ function renderCase(id) {
   const age      = parseInt(document.getElementById('sim-age').value);
   const years    = Math.max(0, age - 20);
 
-  // SVGデータ
-  const SVG_DATA = {
-    mocho:    { total:'約25万円',       cover:'約17万円戻る',      self:'約8万円',          insAmt:'約5〜8万円',           nisaOk:true,  insWin:false, conclusion:'盲腸ならNISAに10万円あれば保険なしでも乗り越えられます' },
-    accident: { total:'約60万円',       cover:'約51万円戻る',      self:'約9万円',          insAmt:'約10〜14万円',         nisaOk:true,  insWin:false, conclusion:'自己負担は約9万円。NISA残高200万円があれば余裕でカバーできます' },
-    polyp:    { total:'約3〜20万円',    cover:'ほぼなし〜一部適用', self:'約2〜20万円',      insAmt:'約5〜10万円',          nisaOk:true,  insWin:false, conclusion:'1つなら2〜3万円、複数でも最大20万円。NISA200万円があればカバーできます' },
-    cancer:   { total:'約100〜150万円', cover:'約90〜140万円戻る', self:'月8〜9万円×数ヶ月', insAmt:'診断一時金100万円＋',  nisaOk:false, insWin:true,  conclusion:'がんは保険の価値が最も高い。診断一時金の安心感は別格です' },
-    cardiac:  { total:'約200〜500万円', cover:'大部分が対象',      self:'月8〜9万円×数ヶ月', insAmt:'診断一時金50〜100万円＋', nisaOk:false, insWin:true, conclusion:'長期入院＋収入減が重なるとNISA200万でも不足リスク。保険の検討価値が高い' },
-    mental:   { total:'収入の1/3消える', cover:'傷病手当金67%',   self:'約30〜60万円',      insAmt:'就業不能給付金',       nisaOk:true,  insWin:false, conclusion:'短期ならNISA200万でカバー可。長期化する場合は就業不能保険を検討' },
-  };
-  const d = SVG_DATA[id];
+  // SVGフロー図を c.svg から参照
+  const d = c.svg;
 
   setText('f-total',      d.total);
   setText('f-cover',      d.cover);
@@ -309,16 +315,8 @@ function renderCase(id) {
   insBox.setAttribute('stroke', '#C04B1A');
   insBox.setAttribute('stroke-width', d.insWin ? '2.5' : '1.5');
 
-  // 比較バー
-  const COMP_DATA = {
-    mocho:    { nisaAmt:'約200万円',           insAmt:'約5〜8万円',              winner:'nisa', nisaLabel:'8万円を余裕でカバーできる',       insLabel:'給付金の目安' },
-    accident: { nisaAmt:'約200万円',           insAmt:'約10〜14万円',            winner:'nisa', nisaLabel:'9万円をすぐ引き出せる',           insLabel:'給付金の目安' },
-    polyp:    { nisaAmt:'約200万円',           insAmt:'約5〜10万円',             winner:'nisa', nisaLabel:'複数でも最大20万円をカバーできる', insLabel:'※複数の場合、給付金が自己負担以下に' },
-    cancer:   { nisaAmt:'100万円以上必要',     insAmt:'診断一時金100万円＋',     winner:'ins',  nisaLabel:'長期治療でリスクあり',             insLabel:'給付金の目安（有利）' },
-    cardiac:  { nisaAmt:'200万円でも不足リスク', insAmt:'診断一時金50〜100万円＋', winner:'ins', nisaLabel:'長期入院＋収入減で資産が枯渇',     insLabel:'三大疾病保険が有効' },
-    mental:   { nisaAmt:'約200万円',           insAmt:'約30〜60万円',            winner:'nisa', nisaLabel:'3〜4ヶ月の不足をカバーできる',   insLabel:'3ヶ月休職の場合の不足額目安' },
-  };
-  const comp = COMP_DATA[id];
+  // 比較バーを c.comp から参照
+  const comp = c.comp;
 
   document.getElementById('comp-nisa-amount').textContent = comp.nisaAmt;
   document.getElementById('comp-nisa-label').textContent  = comp.nisaLabel;

@@ -18,6 +18,11 @@
   <meta name="twitter:image"      content="https://crossover4029-web.github.io/img/ogp-real-sim.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Google Fonts font-display:swap 強制適用（CLS抑制） */
+    @font-face { font-family:'Noto Serif JP'; font-display:swap; }
+    @font-face { font-family:'Noto Sans JP';  font-display:swap; }
+  </style>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/real-sim.css">
 </head>
@@ -26,7 +31,7 @@
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">保険見直し<span>ナビ</span></a>
-    <nav>
+    <nav aria-label="サイトナビゲーション">
       <a href="index.html">トップ</a>
       <a href="simulator.html">シミュレーター</a>
       <a href="review-guide.html">見直し手順</a>
@@ -41,10 +46,6 @@
     <h1>その保険料、<em>本当に</em>必要ですか？</h1>
     <p class="hero-lead-serif">実際に病気・事故が起きたとき、財布から出るお金を確認しよう。</p>
     <p class="hero-disclaimer">※本ページは一般的な情報提供を目的とした試算ページです。保険商品や投資成果を保証・推奨するものではありません。実際の保険料・給付内容・自己負担額は、年齢・健康状態・加入条件・制度改定・病院・治療内容により異なります。</p>
-    <p class="hero-lead">
-      「万が一のために」と入った保険。でも実際いくら必要なのか、考えたことはありますか？<br>
-      6つのリアルなケースで「保険あり」vs「NISAで備える」を比べてみましょう。
-    </p>
   </div>
 </section>
 
@@ -52,7 +53,7 @@
   <div class="section-inner fade-in">
 
     <div class="section-label">あなたの状況を入力</div>
-    <h2 class="section-title section-title-mb">まず保険料と年齢を教えてください</h2>
+    <h2 class="section-title section-title-mb">あなたの月額保険料と年齢を教えてください</h2>
 
     <div class="slider-card">
       <div class="slider-card-title">月額保険料</div>
@@ -116,7 +117,7 @@
       <div class="bar-chart-title">📊 累計金額の比較グラフ</div>
       <div class="bar-chart-sub">スライダーを動かすと変わります</div>
       <div class="bar-chart-wrap">
-        <canvas id="bar-chart" height="260" class="canvas-full"></canvas>
+        <canvas id="bar-chart" class="canvas-full"></canvas>
       </div>
       <div class="bar-chart-legend">
         <span class="bar-chart-legend-item"><span class="bar-chart-legend-dot bar-chart-legend-dot-ins"></span>保険料（支払うだけ）</span>
@@ -140,7 +141,8 @@
         <div class="premise-card-bottom-text">
           保険から支払うのではなく、ご自身の口座から<br>
           仮に病気や事故にあった時に<span class="premise-card-bottom-accent">必要な額を引き出す</span>という想定で、<br>
-          保険と比較してみましょう。
+          保険と比較してみましょう。<br>
+          <span class="premise-card-bottom-sub">※NISA口座からの売却・出金は通常3〜5営業日かかります。急な支出には手元の現金も確保しておきましょう。</span>
         </div>
       </div>
     </div>
@@ -251,6 +253,7 @@
 
     <div class="conclusion-box conclusion-box-lg" id="conclusion">—</div>
     <p class="note-text">※ケース比較は、一般的な治療・入院・公的医療保険適用を前提にした概算イメージです。高額療養費制度の適用有無・年齢区分・所得区分・差額ベッド代・先進医療・通院期間・保険契約内容によって、実際の負担額・給付額は大きく異なります。</p>
+    <p class="note-text">※高額療養費制度には「<strong>多数該当</strong>（直近12ヶ月で3回以上上限に達した場合、4回目から上限額がさらに低減）」と「<strong>世帯合算</strong>（同一世帯の家族の自己負担を合算して申請可能）」という仕組みもあります。長期・高額な治療の場合は必ず加入の健康保険組合や市区町村窓口に確認してください。</p>
   </div>
 </section>
 
